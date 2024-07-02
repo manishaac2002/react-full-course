@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
+
+  function handleChangeName() {
+    const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
+    const int = Math.floor(Math.random() * 4)
+    return programmingLanguage[int]
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Hello React.js ...!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      Hello react.js !
+
+      <p>Let's learn {handleChangeName()}.</p>
+
     </div>
   );
 }
