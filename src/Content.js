@@ -10,7 +10,7 @@ const Content = () => {
 
     return (
         <div>
-            Welcome all!
+            Welcome all...!
 
             <p>Let's learn {handleChangeName()}.</p></div>
     )
