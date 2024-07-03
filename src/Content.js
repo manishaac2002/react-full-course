@@ -1,31 +1,38 @@
 import React from 'react'
+import { useState } from 'react'
 
 const Content = () => {
 
-    const handleClick = (e) => {
-        console.log(e.target.innerText)
-    }
-    const handleClick2 = (names) => {
-        console.log(`Thanks for purchasing course ${names}`)
-    }
 
-    function handleChangeName() {
-        const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
-        const int = Math.floor(Math.random() * 4)
-        return programmingLanguage[int]
+
+    // function handleChangeName() {
+    //     const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
+    //     const int = Math.floor(Math.random() * 4)
+    //     return programmingLanguage[int]
+    // }
+
+    const [count, setCount] = useState(99)
+
+    const incrementFunction = () => {
+        setCount(prevCount => prevCount + 1)
+    }
+    const decrementFunction = () => {
+        setCount(prevCount => prevCount - 1)
     }
 
     return (
 
         <main>
             <p>
-                <h3 onDoubleClick={() => handleClick2("Manisha")}>
-                    Welcome all...!</h3>
-                Let's learn {handleChangeName()}.
+                <h3>
 
-                <button onClick= {(e) => handleClick(e)}>
-                    Purchase course
-                </button>
+                    Welcome all...!</h3>
+                Let's learn React.js
+
+                <button> Purchase course  </button>
+                <button onClick={decrementFunction}> - </button>
+                <span> {count} </span>
+                <button onClick={incrementFunction}> + </button>
 
             </p>
         </main >
