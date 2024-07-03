@@ -1,17 +1,17 @@
+import Content from "./Content";
+import Footer from "./Footer";
+import Header from "./Header";
+
 function App() {
 
-  function handleChangeName() {
-    const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
-    const int = Math.floor(Math.random() * 4)
-    return programmingLanguage[int]
-  }
 
   return (
     <div >
-      Hello react.js !
 
-      <p>Let's learn {handleChangeName()}.</p>
-
+      <Header />
+      <Content />
+      <Footer />
+      
     </div>
   );
 }
