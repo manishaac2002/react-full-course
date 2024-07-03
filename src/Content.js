@@ -11,8 +11,11 @@ const Content = () => {
     return (
 
         <main>
-            Welcome all...!
-            <p>Let's learn {handleChangeName()}.</p>
+
+            <p>
+                <h3>Welcome all...!</h3>
+                Let's learn {handleChangeName()}.
+            </p>
         </main >
 
     )
