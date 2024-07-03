@@ -11,7 +11,6 @@ const Content = () => {
     return (
 
         <main>
-
             <p>
                 <h3>Welcome all...!</h3>
                 Let's learn {handleChangeName()}.
