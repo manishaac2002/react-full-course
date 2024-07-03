@@ -21,7 +21,7 @@ const Content = () => {
             <p>
                 <h3 onDoubleClick={() => handleClick2("Manisha")}>
                     Welcome all...!</h3>
-                Let's learn {handleChangeName()}.
+                 Let's learn {handleChangeName()}.
 
                 <button onClick= {(e) => handleClick(e)}>
                     Purchase course
