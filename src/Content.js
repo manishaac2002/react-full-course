@@ -3,14 +3,6 @@ import { useState } from 'react'
 
 const Content = () => {
 
-
-
-    // function handleChangeName() {
-    //     const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
-    //     const int = Math.floor(Math.random() * 4)
-    //     return programmingLanguage[int]
-    // }
-
     const [count, setCount] = useState(99)
 
     const incrementFunction = () => {
