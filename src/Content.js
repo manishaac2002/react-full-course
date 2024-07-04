@@ -4,21 +4,14 @@ import { useState } from 'react'
 const Content = () => {
 
 
+    const [language,setLanguage]=useState("React.js")
 
-    // function handleChangeName() {
-    //     const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
-    //     const int = Math.floor(Math.random() * 4)
-    //     return programmingLanguage[int]
-    // }
-
-    const [count, setCount] = useState(99)
-
-    const incrementFunction = () => {
-        setCount(prevCount => prevCount + 1)
+    function handleChangeName() {
+        const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
+        const int = Math.floor(Math.random() * 4)
+        setLanguage(programmingLanguage[int]) 
     }
-    const decrementFunction = () => {
-        setCount(prevCount => prevCount - 1)
-    }
+
 
     return (
 
@@ -27,12 +20,10 @@ const Content = () => {
                 <h3>
 
                     Welcome all...!</h3>
-                Let's learn React.js
+                Let's learn {language}
 
-                <button> Purchase course  </button>
-                <button onClick={decrementFunction}> - </button>
-                <span> {count} </span>
-                <button onClick={incrementFunction}> + </button>
+                <button onClick={handleChangeName}> Purchase course  </button>
+                
 
             </p>
         </main >
