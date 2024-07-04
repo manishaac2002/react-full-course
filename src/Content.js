@@ -19,7 +19,7 @@ const Content = () => {
             <p>
                 <h3>
 
-                    Welcome all...!</h3>
+                    Welcome all..!</h3>
                 Let's learn {language}
 
                 <button onClick={handleChangeName}> Purchase course  </button>
