@@ -3,29 +3,40 @@ import { useState } from 'react'
 
 const Content = () => {
 
-
-    const [language,setLanguage]=useState("React.js")
-
-    function handleChangeName() {
-        const programmingLanguage = ["Javascript", "React.js", "MongoDB", "Nodejs", "Express.js"]
-        const int = Math.floor(Math.random() * 4)
-        setLanguage(programmingLanguage[int]) 
-    }
-
-
+    const [items, setItems] = useState([
+        {
+            id: 1,
+            checked: true,
+            item: "Practicing code",
+        },
+        {
+            id: 2,
+            checked: true,
+            item: "Walking in the park",
+        },
+        {
+            id: 3,
+            checked: true,
+            item: "Read a book",
+        }
+    ])
     return (
 
         <main>
-            <p>
-                <h3>
+            <ul>
 
-                    Welcome all..!</h3>
-                Let's learn {language}
+                {items.map(item => (
+                    <li>
+                        <input
+                            type="checkbox"
+                            checked={item.checked}
+                        />
+                        <label> {item.item} </label>
+                        <button> Delete </button>
 
-                <button onClick={handleChangeName}> Purchase course  </button>
-                
-
-            </p>
+                    </li>
+                ))}
+            </ul>
         </main >
 
     )
