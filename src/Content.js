@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { FaTrashAlt } from "react-icons/fa";
+
 
 const Content = () => {
 
@@ -29,18 +29,10 @@ const Content = () => {
         localStorage.setItem('todo_lists', JSON.stringify(listItems))
     }
 
-    const handleDelete = (id) => {
-        const listItems = items.filter(item => item.id !== id)
-        setItems(listItems)
-        localStorage.setItem('todo_lists', JSON.stringify(listItems))
-    }
-
 
     return (
 
         <main>
-
-            {items.length ? (
 
                 <ul>
 
@@ -53,25 +45,13 @@ const Content = () => {
                                 checked={item.checked}
                             />
 
-                            <label
-                                style={{ textDecoration: item.checked ? "line-through" : null }}
-                                onClick={() => handleCheck(item.id)}>
-                                {item.item} </label>
+                            <label> {item.item} </label>
 
-                            <FaTrashAlt
-                                role='button'
-                                tabIndex='0'
-                                onClick={() => handleDelete(item.id)}
-                            />
 
                         </li>
                     ))}
 
-                </ul>
-
-            ) :
-                (<p style={{ marginTop: "2rem" }}> Your list is empty</p>)
-            }
+                </ul> 
 
         </main >
 
