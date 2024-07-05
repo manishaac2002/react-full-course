@@ -27,4 +27,5 @@ const LineItems = ({ item, handleCheck, handleDelete }) => {
   )
 }
 
+
 export default LineItems
