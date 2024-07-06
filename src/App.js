@@ -1,3 +1,4 @@
+import AddItem from "./AddItem"
 import Content from "./Content"
 import Footer from "./Footer"
 import Header from "./Header"
@@ -24,6 +25,17 @@ function App() {
     }
   ])
 
+  const [newItem, setNewItem] = useState('')
+
+  const addItem = (item) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1
+    const addNewItem = { id, checked: false, item }
+    const listItems = [...items, addNewItem]
+    setItems(listItems)
+    localStorage.setItem('todo_lists', JSON.stringify(listItems))
+  }
+
+
 
   const handleCheck = (id) => {
     const listItems = items.map((item) =>
@@ -38,10 +50,24 @@ function App() {
     localStorage.setItem('todo_lists', JSON.stringify(listItems))
   }
 
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!newItem) return
+    addItem(newItem)
+    setNewItem('')
+  }
+
   return (
     <div >
 
       <Header />
+
+      <AddItem
+        newItem={newItem}
+        setNewItem={setNewItem}
+        handleSubmit={handleSubmit}
+      />
 
       <Content
         items={items}
@@ -49,8 +75,7 @@ function App() {
         handleDelete={handleDelete}
       />
 
-      <Footer 
-      
+      <Footer
         length={items.length}
       />
 
