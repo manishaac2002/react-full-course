@@ -1,10 +1,12 @@
+import Header from "./Header"
 import AddItem from "./AddItem"
+import SearchItem from "./SearchItem"
 import Content from "./Content"
 import Footer from "./Footer"
-import Header from "./Header"
 
 import { useState } from 'react'
-import SearchItem from "./SearchItem"
+
+
 
 function App() {
 
@@ -14,10 +16,12 @@ function App() {
 
   const [search, setSearch] = useState('')
 
+
+
   const addItem = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1
-    const addNewItem = { id, checked: false, item }
-    const listItems = [...items, addNewItem]
+    const myNewItem = { id, checked: false, item }
+    const listItems = [...items, myNewItem]
     setItems(listItems)
     localStorage.setItem('todo_lists', JSON.stringify(listItems))
   }
@@ -46,9 +50,9 @@ function App() {
   }
 
   return (
-    <div >
+    <div className="App" >
 
-      <Header />
+      <Header title="To do list" />
 
       <AddItem
         newItem={newItem}
@@ -58,11 +62,11 @@ function App() {
 
       <SearchItem
         search={search}
-        setSearch={setSearch} 
-        />
+        setSearch={setSearch}
+      />
 
       <Content
-        items={items}
+        items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />

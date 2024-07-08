@@ -2,9 +2,9 @@ import React from 'react'
 
 const SearchItem = ({search, setSearch}) => {
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form className ='searchForm' onSubmit={(e) => e.preventDefault()}>
 
-        <label htmlFor="search">Search Items</label>
+        <label htmlFor="search">Search</label>
 
         <input 
         id="search" 
